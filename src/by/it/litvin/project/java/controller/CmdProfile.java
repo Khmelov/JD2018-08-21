@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class CmdProfile extends Cmd {
+
     @Override
     public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user = Util.getUser(req);
@@ -30,5 +31,3 @@ public class CmdProfile extends Cmd {
         return null;
     }
 }
-
-

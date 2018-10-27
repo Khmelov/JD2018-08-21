@@ -7,15 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.List;
 
 public class CmdLogin extends Cmd {
     @Override
-    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ParseException {
-//        req.setAttribute("user", "player");
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
         if (Forms.isPost(req)){
-            req.setAttribute("user", "player");
             String login = req.getParameter("login");
             String password = req.getParameter("password");
             Dao dao = Dao.getDao();
@@ -29,10 +26,4 @@ public class CmdLogin extends Cmd {
         }
         return null;
     }
-
-//    public static void main(String[] args) throws SQLException {
-//        String where = String.format(" WHERE Login='%s' AND PASSWORD='%s'", "testLogin", "testPassword");
-//        List<User> all = Dao.getDao().user.getAll(where);
-//        System.out.println(all.get(0));
-//    }
 }

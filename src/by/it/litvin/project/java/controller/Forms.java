@@ -29,18 +29,13 @@ public class Forms {
         String value = request.getParameter(name);
         if (value != null && value.matches("[0-9]+"))
             return Integer.valueOf(value);
-        throw new ParseException("Field " + name + " incorrect ", 0);
+        throw new ParseException("Field " +name+ " incorrect ", 0);
     }
 
-    static Double getDouble(HttpServletRequest request, String name) throws ParseException {
-        String value = request.getParameter(name);
-        if (value != null && value.matches("[-0-9.]+"))
-            return Double.valueOf(value);
-        throw new ParseException("Field " + name + " incorrect ", 0);
-    }
+//    static Double getDouble(HttpServletRequest request, String name) throws ParseException {
+//        String value = request.getParameter(name);
+//        if (value != null && value.matches("[-0-9.]+"))
+//            return Double.valueOf(value);
+//        throw new ParseException("Field " + name + " incorrect ", 0);
+//    }
 }
-
-
-
-
-

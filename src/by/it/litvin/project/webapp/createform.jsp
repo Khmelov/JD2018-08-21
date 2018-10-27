@@ -16,7 +16,7 @@
 <div class="form-group">
 <label class="col-md-4 control-label" for="name">Name</label>
 <div class="col-md-4">
-<input id="name" name="name" value="TestName" type="text" placeholder="" class="form-control input-md" required="">
+<input id="name" name="name" value="Test Name" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
@@ -26,7 +26,7 @@
 <div class="form-group">
 <label class="col-md-4 control-label" for="surname">Surname</label>
 <div class="col-md-4">
-<input id="surname" name="surname" value="TestSurname" type="text" placeholder="" class="form-control input-md" required="">
+<input id="surname" name="surname" value="Test Surname" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
@@ -36,7 +36,7 @@
 <div class="form-group">
 <label class="col-md-4 control-label" for="address">Address</label>
 <div class="col-md-4">
-<input id="address" name="address" value="TestAddress" type="text" placeholder="" class="form-control input-md" required="">
+<input id="address" name="address" value="Test Address" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
@@ -46,7 +46,7 @@
 <div class="form-group">
 <label class="col-md-4 control-label" for="description">Description</label>
 <div class="col-md-4">
-<input id="description" name="description" value="TestDescription" type="text" placeholder="" class="form-control input-md" required="">
+<input id="description" name="description" value="Test Description" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
@@ -65,7 +65,7 @@
 <div class="form-group">
 <label class="col-md-4 control-label" for="information">Information</label>
 <div class="col-md-4">
-<input id="information" name="information" value="TestInformation" type="text" placeholder="" class="form-control input-md" required="">
+<input id="information" name="information" value="Test Information" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
@@ -77,7 +77,7 @@
   <label class="col-md-4 control-label" for="aim">Aim</label>
   <div class="col-md-4">
     <div class="input-group">
-      <input id="aim" name="aim" value="TestAim" class="form-control" placeholder="" type="text" required="">
+      <input id="aim" name="aim" value="Test Aim" class="form-control" placeholder="" type="text" required="">
       <div class="input-group-btn">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
           options
@@ -96,9 +96,9 @@
 
 <!-- Button -->
 <div class="form-group">
-   <label class="col-md-4 control-label" for="signupsubmit"></label>
+   <label class="col-md-4 control-label" for="signupsubmit">Single Button</label>
    <div class="col-md-4">
-     <button id="signupsubmit" name="signupsubmit" class="btn btn-success">SignUp</button>
+     <button id="signupsubmit" name="signupsubmit" class="btn btn-primary">SignUp</button>
   </div>
 </div>
 

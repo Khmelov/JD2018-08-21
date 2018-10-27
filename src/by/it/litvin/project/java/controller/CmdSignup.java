@@ -6,11 +6,12 @@ import by.it.litvin.project.java.dao.beans.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
-import java.text.ParseException;
+
 
 public class CmdSignup extends Cmd {
+
     @Override
-    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ParseException {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
         if (Forms.isPost(req)){
             String login = req.getParameter("login");
             String email = req.getParameter("email");
