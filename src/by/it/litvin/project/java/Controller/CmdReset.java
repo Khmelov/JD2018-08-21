@@ -1,12 +1,9 @@
-package by.it.litvin.project.java;
+package by.it.litvin.project.java.Controller;
 
 import by.it.litvin.project.java.dao.Dao;
-import by.it.litvin.project.java.dao.beans.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
-import java.util.List;
 
 public class CmdReset extends Cmd {
     @Override

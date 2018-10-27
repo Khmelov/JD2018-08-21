@@ -1,7 +1,5 @@
-package by.it.litvin.project.java;
+package by.it.litvin.project.java.Controller;
 
-import by.it.litvin.project.java.Controller.Forms;
-import by.it.litvin.project.java.Controller.Pattern;
 import by.it.litvin.project.java.dao.Dao;
 import by.it.litvin.project.java.dao.beans.User;
 
