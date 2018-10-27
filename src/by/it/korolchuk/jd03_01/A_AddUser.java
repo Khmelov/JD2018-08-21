@@ -16,8 +16,10 @@ class A_AddUser {
         }
         try (Connection connection = DriverManager.getConnection(Connect.url, Connect.user, Connect.password);
              Statement statement = connection.createStatement()) {
-            statement.executeUpdate("INSERT INTO `korolchuk`.`users`(`id`, `login`, `password`, `email`, `roles_id`) " +
-                    "VALUES (DEFAULT,'mylogin','mypassword','123@mail.ru',2");
+            String sql="INSERT INTO `korolchuk`.`users`(`id`, `login`, `password`, `email`, `roles_id`) " +
+                    "VALUES (DEFAULT,'mylogin','mypassword','123@mail.ru',2)";
+            System.out.println(sql);
+            statement.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }

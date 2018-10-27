@@ -13,7 +13,7 @@ class B_ShowUsers {
         try (Connection connection = DriverManager.getConnection(Connect.url, Connect.user, Connect.password);
              Statement statement = connection.createStatement()) {
 
-            ResultSet resultSet = statement.executeQuery("select * from users;");
+            ResultSet resultSet = statement.executeQuery("select * from `korolchuk`.`users`;");
             while (resultSet.next()) {
                 String getUser = resultSet.getString("login") + ", "
                         + resultSet.getString("password") + ", "
