@@ -1,4 +1,4 @@
-package by.it.litvin.project.java.Controller;
+package by.it.litvin.project.java.controller;
 
 enum Action {
 

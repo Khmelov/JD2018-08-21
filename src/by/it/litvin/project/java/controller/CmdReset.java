@@ -1,4 +1,4 @@
-package by.it.litvin.project.java.Controller;
+package by.it.litvin.project.java.controller;
 
 import by.it.litvin.project.java.dao.Dao;
 

@@ -1,4 +1,4 @@
-package by.it.litvin.project.java.Controller;
+package by.it.litvin.project.java.controller;
 
 import by.it.litvin.project.java.dao.beans.User;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 
 public class Util {
     static User getUser(HttpServletRequest req) {
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
         if (session != null) {
             Object oUser = session.getAttribute("user");
             if (oUser != null) {

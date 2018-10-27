@@ -1,4 +1,4 @@
-package by.it.litvin.project.java.Controller;
+package by.it.litvin.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

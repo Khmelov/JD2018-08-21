@@ -1,4 +1,4 @@
-package by.it.litvin.project.java.Controller;
+package by.it.litvin.project.java.controller;
 
 import by.it.litvin.project.java.dao.Dao;
 import by.it.litvin.project.java.dao.beans.User;
@@ -14,10 +14,10 @@ public class CmdLogin extends Cmd {
     @Override
     public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws SQLException, ParseException {
 //        req.setAttribute("user", "player");
-        if (req.getMethod().equalsIgnoreCase("post")) {
+        if (Forms.isPost(req)){
             req.setAttribute("user", "player");
-            String login = Forms.getString(req.getParameter("login"), Pattern.LOGIN);
-            String password = Forms.getString(req.getParameter("password"),Pattern.PASSWORD);
+            String login = req.getParameter("login");
+            String password = req.getParameter("password");
             Dao dao = Dao.getDao();
             String where = String.format(" WHERE Login='%s' AND PASSWORD='%s'", login, password);
             List<User> users = dao.user.getAll(where);
