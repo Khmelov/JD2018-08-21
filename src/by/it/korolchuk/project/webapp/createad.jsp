@@ -4,7 +4,7 @@
 <div class="container">
 <%@ include file="include/menu.htm" %>
 
-<form class="form-horizontal">
+<form class="form-horizontal" action="do?command=CreateAd" method="post">
 <fieldset>
 
 <!-- Form Name -->

@@ -1,7 +1,7 @@
 package by.it.korolchuk.project.java.dao.simpledao;
 
 
-import by.it.korolchuk.project.java.dao.beans.Ad ;
+import by.it.korolchuk.project.java.dao.beans.Ad;
 import by.it.korolchuk.project.java.dao.beans.Role;
 import by.it.korolchuk.project.java.dao.beans.User;
 
