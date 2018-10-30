@@ -18,13 +18,13 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-       resp.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
+       //resp.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
         process(req, resp) ;
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        resp.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
+        //resp.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
         process(req, resp);
     }
 
@@ -39,11 +39,12 @@ public class FrontController extends HttpServlet {
         } catch (Exception e) {
             nextCommand = null;
             view = Action.ERROR.getJsp();
+            req.setAttribute("printStackTrace", e.toString());
         }
         if (nextCommand == null || nextCommand == command) {
             getServletContext().getRequestDispatcher(view).forward(req,resp);
     } else
-        resp.sendRedirect("do?command=Login" + nextCommand.toString());
+        resp.sendRedirect("do?command=" + nextCommand.toString());
     }
 
 }

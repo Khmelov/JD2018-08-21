@@ -1,6 +1,6 @@
 package by.it.korolchuk.project.java.dao.entityDAO;
 
-import by.it.korolchuk.project.java.dao.ConnectionCreator;
+import by.it.korolchuk.project.java.connection.ConnectionCreator;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

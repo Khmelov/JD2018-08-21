@@ -3,23 +3,51 @@
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
-<p>Cmd Sign-up: ${message}</p>
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+<form class="form-horizontal" action="do?command=SignUp" method="post">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form SignUp</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="login">Login</label>
+  <div class="col-md-4">
+  <input id="login" name="login" value="TestLogin" type="text" placeholder="" class="form-control input-md" required="">
+
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">Email</label>
+  <div class="col-md-4">
+  <input id="email" name="email" value="TestEmail@mail.ru" type="text" placeholder="" class="form-control input-md" required="">
+
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="password">Password</label>
+  <div class="col-md-4">
+    <input id="password" name="password" value="testpassword" type="password" placeholder="" class="form-control input-md" required="">
+
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="signupsubmit"></label>
+  <div class="col-md-4">
+    <button id="signupsubmit" name="signupsubmit" class="btn btn-success">SignUp</button>
+  </div>
+</div>
+
+</fieldset>
 </form>
+
 </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package by.it.akhmelev.project6.java.filters;
+package by.it.korolchuk.project.java.filters;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

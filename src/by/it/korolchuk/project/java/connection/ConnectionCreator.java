@@ -1,4 +1,4 @@
-package by.it.akhmelev.project6.java.connection;
+package by.it.korolchuk.project.java.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,6 @@ public class ConnectionCreator implements DBConnectionData {
             System.out.println("Error loading driver: " + e);
         }
     }
-    //func
 
     private static Connection connection;
 

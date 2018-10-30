@@ -1,6 +1,6 @@
-package by.it.akhmelev.project6.java.controller;
+package by.it.korolchuk.project.java.controller;
 
-import by.it.akhmelev.project6.java.beans.User;
+import by.it.korolchuk.project.java.dao.beans.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -13,7 +13,6 @@ public class Util {
             Object oUser = session.getAttribute("user");
             if (oUser != null) {
                 return (User) oUser;
-
             }
         }
         return null;

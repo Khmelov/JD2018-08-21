@@ -7,8 +7,8 @@ public class Ad {
     private String kindOfAnimal;
     private String greed;
     private String sex;
-    private long age;
-    private long height;
+    private int age;
+    private int height;
     private String qualities;
     private long usersId;
 
@@ -16,7 +16,7 @@ public class Ad {
     }
 
     public Ad(long id, String description, String kindOfAnimal, String greed,
-              String sex, long age, long height, String qualities, long usersId) {
+              String sex, int age, int height, String qualities, long usersId) {
         this.id = id;
         this.description = description;
         this.kindOfAnimal = kindOfAnimal;
@@ -72,7 +72,7 @@ public class Ad {
         return age;
     }
 
-    public void setAge(long age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -80,7 +80,7 @@ public class Ad {
         return height;
     }
 
-    public void setHeight(long height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 

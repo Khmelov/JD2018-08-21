@@ -99,8 +99,8 @@ public class AdDao extends AbstractDao implements InterfaceDAO<Ad> {
                         rs.getString("kindOfAnimal"),
                         rs.getString("greed"),
                         rs.getString("sex"),
-                        rs.getLong("age"),
-                        rs.getLong("height"),
+                        rs.getInt("age"),
+                        rs.getInt("height"),
                         rs.getString("qualities"),
                         rs.getLong("users_id")));
             }
