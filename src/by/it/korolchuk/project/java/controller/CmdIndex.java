@@ -10,7 +10,7 @@ public class CmdIndex extends Cmd {
 
     @Override
     public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
-        req.setAttribute("ads", Dao.getDao().ad.getAll());
+       req.setAttribute("ads", Dao.getDao().ad.getAll(""));
         return null;
     }
 }

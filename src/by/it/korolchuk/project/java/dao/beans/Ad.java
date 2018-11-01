@@ -84,12 +84,12 @@ public class Ad {
         this.height = height;
     }
 
-    public String getQalities() {
+    public String getQualities() {
         return qualities;
     }
 
-    public void setQalities(String qalities) {
-        this.qualities = qalities;
+    public void setQualities(String qualities) {
+        this.qualities = qualities;
     }
 
     public long getUsersId() {

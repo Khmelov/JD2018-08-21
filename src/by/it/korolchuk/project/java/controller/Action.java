@@ -8,6 +8,12 @@ public enum Action {
     RESET {{
         cmd = new CmdReset();
     }},
+    EDITUSERS {{
+        cmd = new CmdEditUsers();
+    }},
+    EDITADS {{
+        cmd = new CmdEditAds();
+    }},
     LOGIN {{
         cmd = new CmdLogin();
     }},

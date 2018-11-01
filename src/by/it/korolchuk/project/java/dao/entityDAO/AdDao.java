@@ -27,7 +27,7 @@ public class AdDao extends AbstractDao implements InterfaceDAO<Ad> {
                 ad.getSex(),
                 ad.getAge(),
                 ad.getHeight(),
-                ad.getQalities(),
+                ad.getQualities(),
                 ad.getUsersId());
 
         long id = executeUpdate(sql);
@@ -64,7 +64,7 @@ public class AdDao extends AbstractDao implements InterfaceDAO<Ad> {
                 ad.getSex(),
                 ad.getAge(),
                 ad.getHeight(),
-                ad.getQalities(),
+                ad.getQualities(),
                 ad.getUsersId(),
                 ad.getId());
         return (0 < executeUpdate(sql));

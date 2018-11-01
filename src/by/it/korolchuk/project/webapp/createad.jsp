@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <%@ include file="include/head.htm" %>
 <body>
@@ -8,78 +10,77 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>New ad</legend>
+<legend>Новое объявление</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="description">Description</label>
+  <label class="col-md-4 control-label" for="description">Описание</label>
   <div class="col-md-5">
-  <input id="description" value="Test description" name="description" type="text" placeholder="input header of your ad" class="form-control input-md">
+  <input id="description" value="Описание" name="description" type="text" placeholder="" class="form-control input-md">
 
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="kindOfAnimal">Kind of animal</label>
+  <label class="col-md-4 control-label" for="kindOfAnimal">Вид животного</label>
   <div class="col-md-4">
-  <input id="kindOfAnimal" name="kindOfAnimal" type="text" placeholder="a dog" class="form-control input-md">
-
+  <input id="kindOfAnimal" value="Вид животного" name="kindOfAnimal" type="text" placeholder="" class="form-control input-md">
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="greed">Greed</label>
+  <label class="col-md-4 control-label" for="greed">Порода</label>
   <div class="col-md-4">
-  <input id="greed" name="greed" type="text" placeholder="dachshund" class="form-control input-md">
+  <input id="greed" value="порода" name="greed" type="text" placeholder="" class="form-control input-md">
 
   </div>
 </div>
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="sex">Sex</label>
+  <label class="col-md-4 control-label" for="sex">Пол</label>
   <div class="col-md-4">
     <select id="sex" name="sex" class="form-control">
-      <option value="1">male</option>
-      <option value="2">female</option>
+      <option value="1">самец</option>
+      <option value="2">самка</option>
     </select>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="age">Age</label>
+  <label class="col-md-4 control-label" for="age">Возраст</label>
   <div class="col-md-4">
-  <input id="age" name="age" type="text" placeholder="1" class="form-control input-md">
-  <span class="help-block">years</span>
+  <input id="age" value="5" name="age" type="text" placeholder="" class="form-control input-md">
+  <span class="help-block">кол-во полных лет</span>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="height">Height</label>
+  <label class="col-md-4 control-label" for="height">Рост</label>
   <div class="col-md-4">
-  <input id="height" name="height" type="text" placeholder="30" class="form-control input-md">
-  <span class="help-block">cm</span>
+  <input id="height" value="30" name="height" type="text" placeholder="30" class="form-control input-md">
+  <span class="help-block">см</span>
   </div>
 </div>
 
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="qualities">Qualities</label>
+  <label class="col-md-4 control-label" for="qualities">Особенности</label>
   <div class="col-md-4">
-    <textarea class="form-control" id="qualities" name="qualities">input special qualities or futures if it's needed </textarea>
+    <textarea class="form-control" id="qualities" value="Особенности" name="qualities"> </textarea>
   </div>
 </div>
 
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton">Submit</label>
+  <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Отправить</button>
   </div>
 </div>
 

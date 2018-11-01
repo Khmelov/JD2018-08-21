@@ -19,83 +19,84 @@ public class Reset {
         init();
 
     }
-        private static void reset() {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
 
-
-            try (Connection connection = DriverManager.getConnection(url, user, password);
-                 Statement statement = connection.createStatement()) {
-                statement.executeUpdate("DROP TABLE IF EXISTS `korolchuk`.`ads` ;");
-                statement.executeUpdate("DROP TABLE IF EXISTS `korolchuk`.`users` ;");
-                statement.executeUpdate("DROP TABLE IF EXISTS `korolchuk`.`roles` ;");
-                statement.executeUpdate("DROP SCHEMA IF EXISTS `korolchuk` ;");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    private static void reset() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
 
-        private static void init() {
 
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+        try (Connection connection = DriverManager.getConnection(url, user, password);
+             Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DROP TABLE IF EXISTS `korolchuk`.`ads` ;");
+            statement.executeUpdate("DROP TABLE IF EXISTS `korolchuk`.`users` ;");
+            statement.executeUpdate("DROP TABLE IF EXISTS `korolchuk`.`roles` ;");
+            statement.executeUpdate("DROP SCHEMA IF EXISTS `korolchuk` ;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-            try (Connection connection = DriverManager.getConnection(url, user, password);
-                 Statement statement = connection.createStatement()) {
-                statement.executeUpdate("DROP SCHEMA IF EXISTS `korolchuk` ;");
-                statement.executeUpdate("CREATE SCHEMA IF NOT EXISTS `korolchuk` DEFAULT CHARACTER SET utf8 ;");
+    private static void init() {
 
-                statement.executeUpdate("CREATE TABLE IF NOT EXISTS `korolchuk`.`roles` (\n" +
-                        "`id` INT NOT NULL AUTO_INCREMENT,\n" +
-                        "`role` VARCHAR(45) NULL,\n" +
-                        "PRIMARY KEY (`id`))\n" +
-                        "ENGINE = InnoDB;\n");
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
-                statement.executeUpdate("CREATE TABLE IF NOT EXISTS `korolchuk`.`users` (\n" +
-                        "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
-                        "  `login` VARCHAR(45) NULL,\n" +
-                        "  `password` VARCHAR(45) NULL,\n" +
-                        "  `email` VARCHAR(45) NULL,\n" +
-                        "  `roles_id` INT NOT NULL,\n" +
-                        "  PRIMARY KEY (`id`),\n" +
-                        "  INDEX `fk_users_roles_idx` (`roles_id` ASC),\n" +
-                        "  CONSTRAINT `fk_users_roles`\n" +
-                        "    FOREIGN KEY (`roles_id`)\n" +
-                        "    REFERENCES `korolchuk`.`roles` (`id`)\n" +
-                        "    ON DELETE RESTRICT\n" +
-                        "    ON UPDATE RESTRICT)\n" +
-                        "ENGINE = InnoDB;");
+        try (Connection connection = DriverManager.getConnection(url, user, password);
+             Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DROP SCHEMA IF EXISTS `korolchuk` ;");
+            statement.executeUpdate("CREATE SCHEMA IF NOT EXISTS `korolchuk` DEFAULT CHARACTER SET utf8 ;");
 
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS `korolchuk`.`roles` (\n" +
+                    "`id` INT NOT NULL AUTO_INCREMENT,\n" +
+                    "`role` VARCHAR(45) NULL,\n" +
+                    "PRIMARY KEY (`id`))\n" +
+                    "ENGINE = InnoDB;\n");
 
-                statement.executeUpdate("CREATE TABLE IF NOT EXISTS `korolchuk`.`ads` (\n" +
-                        "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
-                        "  `description` VARCHAR(45) NULL,\n" +
-                        "  `kindOfAnimal` VARCHAR(45) NULL,\n" +
-                        "  `greed` VARCHAR(45) NULL,\n" +
-                        "  `sex` VARCHAR(45) NULL,\n" +
-                        "  `age` DECIMAL NULL,\n" +
-                        "  `height` INT NULL,\n" +
-                        "  `qualities` VARCHAR(45) NULL,\n" +
-                        "  `users_id` INT NOT NULL,\n" +
-                        "  PRIMARY KEY (`id`),\n" +
-                        "  INDEX `fk_Ads_users1_idx` (`users_id` ASC),\n" +
-                        "  CONSTRAINT `fk_ads_users`\n" +
-                        "    FOREIGN KEY (`users_id`)\n" +
-                        "    REFERENCES `korolchuk`.`users` (`id`)\n" +
-                        "    ON DELETE CASCADE\n" +
-                        "    ON UPDATE CASCADE)\n" +
-                        "ENGINE = InnoDB;\n");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS `korolchuk`.`users` (\n" +
+                    "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
+                    "  `login` VARCHAR(45) NULL,\n" +
+                    "  `password` VARCHAR(45) NULL,\n" +
+                    "  `email` VARCHAR(45) NULL,\n" +
+                    "  `roles_id` INT NOT NULL,\n" +
+                    "  PRIMARY KEY (`id`),\n" +
+                    "  INDEX `fk_users_roles_idx` (`roles_id` ASC),\n" +
+                    "  CONSTRAINT `fk_users_roles`\n" +
+                    "    FOREIGN KEY (`roles_id`)\n" +
+                    "    REFERENCES `korolchuk`.`roles` (`id`)\n" +
+                    "    ON DELETE RESTRICT\n" +
+                    "    ON UPDATE RESTRICT)\n" +
+                    "ENGINE = InnoDB;");
 
 
-                statement.executeUpdate("INSERT INTO `korolchuk`.`roles` (`id`, `role`) VALUES (DEFAULT, 'admin');");
-                statement.executeUpdate("INSERT INTO `korolchuk`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user');");
-                statement.executeUpdate("INSERT INTO `korolchuk`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest');");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS `korolchuk`.`ads` (\n" +
+                    "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
+                    "  `description` VARCHAR(45) NULL,\n" +
+                    "  `kindOfAnimal` VARCHAR(45) NULL,\n" +
+                    "  `greed` VARCHAR(45) NULL,\n" +
+                    "  `sex` VARCHAR(45) NULL,\n" +
+                    "  `age` DECIMAL NULL,\n" +
+                    "  `height` INT NULL,\n" +
+                    "  `qualities` VARCHAR(45) NULL,\n" +
+                    "  `users_id` INT NOT NULL,\n" +
+                    "  PRIMARY KEY (`id`),\n" +
+                    "  INDEX `fk_Ads_users1_idx` (`users_id` ASC),\n" +
+                    "  CONSTRAINT `fk_ads_users`\n" +
+                    "    FOREIGN KEY (`users_id`)\n" +
+                    "    REFERENCES `korolchuk`.`users` (`id`)\n" +
+                    "    ON DELETE CASCADE\n" +
+                    "    ON UPDATE CASCADE)\n" +
+                    "ENGINE = InnoDB;\n");
+
+
+            statement.executeUpdate("INSERT INTO `korolchuk`.`roles` (`id`, `role`) VALUES (DEFAULT, 'admin');");
+            statement.executeUpdate("INSERT INTO `korolchuk`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user');");
+            statement.executeUpdate("INSERT INTO `korolchuk`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest');");
 
                 statement.executeUpdate("INSERT INTO `korolchuk`.`users` (`id`, `login`, `password`, `email`, `roles_id`) VALUES (DEFAULT, 'admin', 'admin', 'admin@mail.ru', 1);");
                 statement.executeUpdate("INSERT INTO `korolchuk`.`users` (`id`, `login`, `password`, `email`, `roles_id`) VALUES (DEFAULT, 'user', 'user', 'user@mail.ru', 2);");

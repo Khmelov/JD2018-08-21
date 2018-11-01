@@ -1,12 +1,12 @@
-package by.it.akhmelev.project7.java.controller;
+package by.it.korolchuk.project.java.controller;
 
-import by.it.akhmelev.project7.java.beans.User;
-import by.it.akhmelev.project7.java.dao.Dao;
+        import by.it.korolchuk.project.java.dao.beans.User;
+        import by.it.korolchuk.project.java.dao.Dao;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
-import java.text.ParseException;
+        import javax.servlet.http.HttpServletRequest;
+        import javax.servlet.http.HttpServletResponse;
+        import java.sql.SQLException;
+        import java.text.ParseException;
 
 public class CmdEditUsers extends Cmd {
 
@@ -29,7 +29,6 @@ public class CmdEditUsers extends Cmd {
             if (req.getParameter("Delete") != null) {
                 dao.user.delete(user);
             }
-
         }
         req.setAttribute("roles", dao.role.getAll());
         req.setAttribute("users", dao.user.getAll());
